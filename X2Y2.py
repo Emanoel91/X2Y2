@@ -63,8 +63,8 @@ with open('style.css')as f:
 # flipside API
 @st.cache(ttl=600)
 def get_data(query1):
-     if query1 == 'Daily Transactions':
-        return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/8481f651-ec83-44a4-8aa5-d79ef14de8d9/data/latest')
+     if query1 == 'yesterday data':
+        return pd.read_json('https://api.flipsidecrypto.com/api/v2/queries/ed420b19-45a3-4624-8357-53eaacabab68/data/latest')
      elif query1 == 'ALICE Price ATH':
         return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/392bbd12-3ba3-4fa8-844b-6bf8f81405e5/data/latest')
      elif query1 == 'New Addresses':
@@ -109,7 +109,7 @@ def get_data(query1):
         return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/ecacbbd4-fd7f-417a-99b4-80fd0a4fef8f/data/latest')
      return None
 
-Daily_Transactions = get_data('Daily Transactions')
+yesterday_data = get_data('yesterday data')
 ALICE_Price_ATH = get_data('ALICE Price ATH')
 New_Addresses = get_data('New Addresses')
 Daily_Transactions_Value = get_data('Daily Transactions Value')
@@ -138,25 +138,17 @@ st.write(
 **99999999999999999999999999999999999999999999999999999999999999999999.**
     """
 )
-df = Transaction_Overview
+df = yesterday_data
 c1, c2, c3, c4 = st.columns(4)
 
 with c1:
-    fig = px.bar(df, x='L2 Chain', y='TX Count', color='L2 Chain', title='Total Transactions Count', log_y=False)
-    fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_title='TXs Count', xaxis={'categoryorder':'total ascending'})
-    st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+    st.metric(label='Sales Volume (ETH) (Yesterday)', value=df['CURRENT_VOLUME'])
 with c2:
-    fig = px.bar(df, x='L2 Chain', y='Total TX Fee', color='L2 Chain', title='Total Transaction Fees', log_y=False)
-    fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_title='$ETH', xaxis={'categoryorder':'total ascending'})
-    st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)	
+    	
 with c3:
-    fig = px.bar(df, x='L2 Chain', y='Active Address', color='L2 Chain', title='Total Number of Addresses', log_y=False)
-    fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_title='Addresses Count', xaxis={'categoryorder':'total ascending'})
-    st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)	
+    
 with c4:
-    fig = px.bar(df, x='L2 Chain', y='Total TX Value', color='L2 Chain', title='Total Transactions Value', log_y=False)
-    fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_title='$ETH', xaxis={'categoryorder':'total ascending'})
-    st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+    
 
 c1, c2, c3, c4 = st.columns(4)
 
