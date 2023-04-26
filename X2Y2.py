@@ -179,7 +179,7 @@ with c4:
 
 st.write(
     """
-**The results show that the top 3 events in both chains are 'Transfer', 'Approval' and 'Swap' respectively.**
+**9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999.**
     """
 )
 df = Top_20_Events_Based_on_TXs_Count_Arbitrum
@@ -198,8 +198,7 @@ with c2:
 
 st.write(
     """
-**Most addresses of both chains have only been active for one day (Arbitrum: 912k vs. Optimism: 722k). 43 addresses on the Arbitrum chain have been active for the 
-most days (these addresses have been active for more than 281 days). Likewise, there are two addresses on the Optimism chain that have been active for 438 days.**
+**99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999.**
     """
 )
 
@@ -215,9 +214,7 @@ st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
 st.write(
     """
-**Optimism chain transaction success rate is 94.5%. Meanwhile, this rate for the Arbitrum chain is about 97%. On the other hand, the number of failed transactions of 
-Arbitrum is less than Optimism, while the total number of transactions of Arbitrum is more than Optimism. The amount of fees paid for failed transactions in the 
-Optimism chain is about 2 times that of Arbitrum (Optimism: 762 ETH & Arbitrum: 379 ETH)**
+**999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999.**
     """
 )
 
@@ -236,10 +233,7 @@ with c2:
 
 st.write(
     """
-**The number of transactions at the end of the night and the beginning of the morning in both chains is less than at other times. The highest number of transactions 
-and transaction fees were recorded on the Arbitrum network at 13:00 on Wednesdays. Meanwhile, the highest number of Optimism network transactions are recorded at 8 am 
-on Wednesdays. Optimism transaction fees are higher on Tuesdays at 19:00, 13:00, 16:00 on Wednesdays and 15:00 on Thursdays than at other times. The fees collected at 
-the end of the week in both chains are lower than at other times.**
+**9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999.**
     """
 )
 
@@ -274,11 +268,7 @@ subtab_Daily, subtab_Weekly, subtab_Monthly = st.tabs(['Daily', 'Weekly', 'Month
 with subtab_Daily:
             st.write(
                 """
-             **Ethereum layer-2 on-chain activity has been increasing to the extent that the leading two networks now process more transaction volume than mainnet 
-	       Ethereum. Layer-2 networks Arbitrum and Optimism have seen an increase in transactions over the past three months. Comparatively, aside from a few 
-	       spikes, transactions on the Ethereum network have declined by around 33% since late October, according to Etherscan. Ethereum processed 
-	       over 1.06 million transactions on Jan. 10, whereas Arbitrum and Optimism combined processed over 1,139,136 transactions. Additionally, Optimism has 
-	       now surpassed Arbitrum in terms of daily transactions following a steady uptrend in activity since September.**
+             **999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999.**
                 """
             )
             df = Daily_Transactions
@@ -310,9 +300,7 @@ with subtab_Daily:
 	    
             st.write(
                 """
-            **From September 2022 onwards, there will be an upward trend in the fees collected by the Optimism chain. The reason for this upward trend is the increase 
-	    in the number of Optimism chain transactions from September onwards. On the other hand, since August 31, 2022, the average transaction fees of Optimism 
-	    network have always been higher than Arbitrum.**
+            **999999999999999999999999999999999999999999999999999999999999999999999999999999999999999.**
                 """
             )	
 		
@@ -326,12 +314,7 @@ with subtab_Daily:
 		
             st.write(
                 """
-            **Before August 2022, the average number of daily transactions of addresses on the Optimism network was always higher than that of Arbitrum. While after 
-	    this date until the end of October, the average number of transactions per address on the Arbitrum network surpassed Optimism, and finally, from November 
-	    2022 onwards, the average number of transactions per address on the two layer 2 chains has almost equaled. On December 21, 2022, the number of daily active 
-	    addresses of the Optimism chain surpassed Arbitrum. On December 21, 2022, the number of active 
-	    addresses of the Optimism network reached 111,224 addresses, which is a new record among layer 2 chains. The number of new addresses in the Optimism chain 
-	    also grew significantly in late December**
+            **999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999.**
                 """
             )
 		
@@ -353,8 +336,7 @@ with subtab_Daily:
 with subtab_Daily:
              st.write(
                 """
-             **The charts below show that almost most of the time, the value of daily transactions of Arbitrum chain was more than Optimism. On the other hand, in a 
-	     large number of days, the value of Arbitrum network transactions has increased dramatically.**
+             **99999999999999999999999999999999999999999999999999999999999999999999999999999999999999.**
                  """
              )		
              df = Daily_Transactions_Value	
@@ -491,9 +473,7 @@ with subtab_Monthly:
 st.subheader('🔍 Conclusion')
 st.write(
    """
-**In this dashboard, the transaction status of two of the most important layer 2 chains, Arbitrum and Optimism, were compared. In many indicators, Arbitrum
-has a better situation than Optimism, while we see a significant growth in the Optimism transactions from September 2022 onwards, which indicates the 
-desire of the Optimism chain to take the first place among the layer 2 chains and pass Arbitrum.**
+**9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999.**
    """
 )
 #-------------------------------------------------------------------------------------------------------------------------------------
