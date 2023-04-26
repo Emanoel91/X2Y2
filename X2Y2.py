@@ -168,6 +168,7 @@ with c1:
     st.metric(label='Total Transactions Fee Collected (ETH)', value=df['TX_FEE_VOL']) 
 
 df = NFT_Collection
+with c2:
     st.metric(label='Total NFT Project Count', value=df['Total NFT Project Count'])  
     
 
