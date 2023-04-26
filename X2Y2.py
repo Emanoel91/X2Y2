@@ -49,8 +49,7 @@ marketplaces.
 st.subheader('🎯 Purposes of Dashboard')
 st.write(
     """
-**In this Dashboard we compare and contrast two major L2 chains: Arbitrum & Optimism. We analysis metrics such as total and average transaction volume, average 
-transaction size, active users, new users added, and many intersting metrics relevant to this comparison.**
+**In this dashboard, the transaction status of users in the X2Y2 market is reviewed.**
     """
 )
 
@@ -135,7 +134,7 @@ Heat_Map_of_Transactions_Arbitrum = get_data('Heat Map of Transactions Arbitrum'
 st.subheader('📊 Data Analysis')
 st.write(
     """
-**99999999999999999999999999999999999999999999999999999999999999999999.**
+**👓Overview**
     """
 )
 df = yesterday_data
@@ -174,7 +173,7 @@ with c2:
 
 st.write(
     """
-**9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999.**
+**📈Trending Overview.**
     """
 )
 df = NFT_Sales
@@ -218,7 +217,7 @@ with c2:
 
 st.write(
     """
-**999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999.**
+**👨‍💻 Top Users Identifying.**
     """
 )
 
