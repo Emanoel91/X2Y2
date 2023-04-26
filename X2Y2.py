@@ -272,7 +272,7 @@ In this dashboard, we took a quick look at the activity of users in the X2Y2 NFT
 #-------------------------------------------------------------------------------------------------------------------------------------
 
 #-------------------------------------------------------------------------------------------------------------------------------------
-c1, c2, c3 = st.columns()
+c1, c2, c3 = st.columns(3)
 with c1:
     st.info('**Analyst: [Emanoel](https://twitter.com/Astiran91)**', icon="📌")
     #c1.image(Image.open('Images/analyst2.JPG'))
