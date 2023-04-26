@@ -12,7 +12,7 @@ theme_plotly = None # None or streamlit
 # l2chains = PIL.Image.open('op-arb.JPG')
 
 # Title
-st.set_page_config(page_title='Evaluating the Activities of X2Y2 Users', page_icon=l2chains , layout='wide')
+#st.set_page_config(page_title='Evaluating the Activities of X2Y2 Users', page_icon=l2chains , layout='wide')
 st.title('Evaluating the Activities of X2Y2 Users')
 
 # Content
