@@ -144,11 +144,11 @@ c1, c2, c3, c4 = st.columns(4)
 with c1:
     st.metric(label='Sales Volume (ETH) (Yesterday)', value=df['CURRENT_VOLUME'])
 with c2:
-    	
+    st.metric(label='Sales Volume (ETH) (Yesterday)', value=df['CURRENT_VOLUME'])    	
 with c3:
-    
+    st.metric(label='Sales Volume (ETH) (Yesterday)', value=df['CURRENT_VOLUME'])    
 with c4:
-    
+    st.metric(label='Sales Volume (ETH) (Yesterday)', value=df['CURRENT_VOLUME'])    
 
 c1, c2, c3, c4 = st.columns(4)
 
