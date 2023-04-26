@@ -9,16 +9,16 @@ from PIL import Image
 
 theme_plotly = None # None or streamlit
 
-l2chains = PIL.Image.open('op-arb.JPG')
+# l2chains = PIL.Image.open('op-arb.JPG')
 
 # Title
-st.set_page_config(page_title='Arbitrum vs. Optimism', page_icon=l2chains , layout='wide')
-st.title('Arbitrum vs. Optimism')
+st.set_page_config(page_title='Evaluating the Activities of X2Y2 Users', page_icon=l2chains , layout='wide')
+st.title('Evaluating the Activities of X2Y2 Users')
 
 # Content
 c1, c2 = st.columns(2)
 
-c1.image(Image.open('Images/op-arb.JPG'))
+c1.image(Image.open('Images/X2Y2-2.png'))
 
 
 st.subheader('📃 Introduction')
