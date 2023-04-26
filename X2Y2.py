@@ -65,8 +65,8 @@ with open('style.css')as f:
 def get_data(query1):
      if query1 == 'yesterday data':
         return pd.read_json('https://api.flipsidecrypto.com/api/v2/queries/ed420b19-45a3-4624-8357-53eaacabab68/data/latest')
-     elif query1 == 'ALICE Price ATH':
-        return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/392bbd12-3ba3-4fa8-844b-6bf8f81405e5/data/latest')
+     elif query1 == 'X2Y2 Statistical Data':
+        return pd.read_json('https://api.flipsidecrypto.com/api/v2/queries/01088e5b-3de7-4b40-8130-05ac7676db93/data/latest')
      elif query1 == 'New Addresses':
         return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/90828ee6-8f67-47de-8812-29d302b22d4c/data/latest')
      elif query1 == 'Daily Transactions Value':
@@ -110,7 +110,7 @@ def get_data(query1):
      return None
 
 yesterday_data = get_data('yesterday data')
-ALICE_Price_ATH = get_data('ALICE Price ATH')
+X2Y2_Statistical_Data = get_data('X2Y2 Statistical Data')
 New_Addresses = get_data('New Addresses')
 Daily_Transactions_Value = get_data('Daily Transactions Value')
 Weekly_Transactions = get_data('Weekly Transactions')
@@ -142,32 +142,25 @@ df = yesterday_data
 c1, c2, c3, c4 = st.columns(4)
 
 with c1:
-    st.metric(label='Sales Volume (ETH) (Yesterday)', value=df['CURRENT_VOLUME'])
+    st.metric(label='Current Sales Volume (ETH)', value=df['CURRENT_VOLUME'])
 with c2:
-    st.metric(label='Sales Volume (ETH) (Yesterday)', value=df['CURRENT_VOLUME'])    	
+    st.metric(label='Current NFT Sales Count', value=df['CURRENT_SALES_COUNT']) 	
 with c3:
-    st.metric(label='Sales Volume (ETH) (Yesterday)', value=df['CURRENT_VOLUME'])    
+    st.metric(label='Current Purchasers Count', value=df['purchaser'])     
 with c4:
-    st.metric(label='Sales Volume (ETH) (Yesterday)', value=df['CURRENT_VOLUME'])    
+    st.metric(label='Current Sellers Count', value=df['SELLER'])    
 
+df = X2Y2_Statistical_Data
 c1, c2, c3, c4 = st.columns(4)
 
 with c1:
-    fig = px.bar(df, x='L2 Chain', y='TPS', color='L2 Chain', title='Aerage TPS', log_y=False)
-    fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_title='TXs Count', xaxis={'categoryorder':'total ascending'})
-    st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+    st.metric(label='Total NFT Sales Volume (ETH)', value=df['VOLUME'])
 with c2:
-    fig = px.bar(df, x='L2 Chain', y='Average TX Value', color='L2 Chain', title='Average Transactions Value', log_y=False)
-    fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_title='$ETH', xaxis={'categoryorder':'total ascending'})
-    st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)	
-with c3:
-    fig = px.bar(df, x='L2 Chain', y='Average TX Fee', color='L2 Chain', title='Average Transactions Fee', log_y=False)
-    fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_title='$ETH', xaxis={'categoryorder':'total ascending'})
-    st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)	
+    st.metric(label='Total NFT Sales Count', value=df['SALES_COUNT'])   	
+with c3:  
+    st.metric(label='Total Unique NFT Purchasers Count', value=df['PURCHASER']) 
 with c4:
-    fig = px.bar(df, x='L2 Chain', y='Average TX per Address', color='L2 Chain', title='Average TX per Address', log_y=False)
-    fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_title='TXs Count', xaxis={'categoryorder':'total ascending'})
-    st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+    st.metric(label='Total Unique NFT Sellers Count', value=df['SELLER']) 
 
 st.write(
     """
