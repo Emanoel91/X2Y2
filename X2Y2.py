@@ -18,7 +18,7 @@ st.title('Evaluating the Activities of X2Y2 Users')
 # Content
 c1, c2 = st.columns(2)
 
-c1.image(Image.open('Images/X2Y2-2.png'))
+# c1.image(Image.open('Images/X2Y2-2.png'))
 
 
 st.subheader('📃 Introduction')
