@@ -265,23 +265,21 @@ with c1:
 st.subheader('🔍 Conclusion')
 st.write(
    """
-**9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999.**
+**
+In this dashboard, we took a quick look at the activity of users in the X2Y2 NFT marketplace.**
    """
 )
 #-------------------------------------------------------------------------------------------------------------------------------------
 
 #-------------------------------------------------------------------------------------------------------------------------------------
-c1, c2, c3, c4 = st.columns(4)
+c1, c2, c3 = st.columns()
 with c1:
     st.info('**Analyst: [Emanoel](https://twitter.com/Astiran91)**', icon="📌")
     #c1.image(Image.open('Images/analyst2.JPG'))
 with c2:
-    st.info('**Database: [Flipside Crypto](https://flipsidecrypto.xyz/)**', icon="📚")
-    #c2.image(Image.open('Images/flipside.JPG'))
-with c3:
     st.info('**Provided for: [MetricsDao](https://metricsdao.xyz/)**', icon="💡")
-    #c3.image(Image.open('Images/metricsdao.JPG'))
-with c4:
+    #c2.image(Image.open('Images/metricsdao.JPG'))
+with c3:
     st.info('**[My github](https://github.com/Emanoel91)**', icon="😺")
     #c3.image(Image.open('Images/metricsdao.JPG'))	
 
