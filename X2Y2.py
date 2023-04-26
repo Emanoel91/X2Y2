@@ -132,13 +132,10 @@ Status_of_Total_Transactions = get_data('Status of Total Transactions')
 Heat_Map_of_Transactions_Optimism = get_data('Heat Map of Transactions Optimism')
 Heat_Map_of_Transactions_Arbitrum = get_data('Heat Map of Transactions Arbitrum')
 
-st.subheader('📄 Comparison of L2 chains')
+st.subheader('📊 Data Analysis')
 st.write(
     """
-**Although the number of transactions and TPS of Arbitrum chain is more than the number of transactions and TPS of Optimism, but because the average transaction fee 
-of Arbitrum is lower than Optimism, so the total fees collected in Optimism are more than Arbitrum. On the other hand, although the number of unique addresses of 
-Arbitrum is more than that of Optimism, the average number of recorded transactions per address is the same in the two chains. The results show that the average 
-transaction value of Arbitrum is higher than Optimism.**
+**99999999999999999999999999999999999999999999999999999999999999999999.**
     """
 )
 df = Transaction_Overview
