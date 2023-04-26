@@ -231,7 +231,33 @@ with c1:
     fig.update_layout(showlegend=True, xaxis_title=None, legend_title='Volume', yaxis_title='$ETH', xaxis={'categoryorder':'total ascending'})
     st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 		
-
+with c2:
+    df = Top_User_B
+    fig = px.bar(df, x='PROJECT_NAME', y='TX_FEE_VOL', color='TX_FEE_VOL', title='Top 10 NFT Projects with the Most Tx Fee Used', log_y=False, barmode='group')
+    fig.update_layout(showlegend=True, xaxis_title=None, legend_title='TX Fees', yaxis_title='$ETH', xaxis={'categoryorder':'total ascending'})
+    st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+	
+c1, c2 = st.columns(2)
+            
+with c1:
+    df = Top_User_C
+    fig = px.bar(df, x='PROJECT_NAME', y='SALES_COUNT', color='SALES_COUNT', title='Top 10 NFT Projects With the Most Sale Count', log_y=False, barmode='group')
+    fig.update_layout(showlegend=True, xaxis_title=None, legend_title='Sales Count', yaxis_title='TXs Count', xaxis={'categoryorder':'total ascending'})
+    st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+		
+with c2:
+    df = Top_User_D
+    fig = px.bar(df, x='PROJECT_NAME', y='SELLER', color='SELLER', title='Top 10 NFT Projects with the Highest Number of Unique Sellers', log_y=False, barmode='group')
+    fig.update_layout(showlegend=True, xaxis_title=None, legend_title='Seller Count', yaxis_title='Address Count', xaxis={'categoryorder':'total ascending'})
+    st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+	
+c1, c2 = st.columns(2)
+            
+with c1:
+    df = Top_User_E
+    fig = px.bar(df, x='PROJECT_NAME', y='PURCHASER', color='PURCHASER', title='Top 10 NFT Projects with the Highest Number of Unique Purchasers', log_y=False, barmode='group')
+    fig.update_layout(showlegend=True, xaxis_title=None, legend_title='Purchaser Count', yaxis_title='Address Count', xaxis={'categoryorder':'total ascending'})
+    st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 		
 
 
