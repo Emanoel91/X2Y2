@@ -26,35 +26,20 @@ st.subheader('📃 Introduction')
 
 st.write(
     """
-🔘 **Layer 2 Solutions**
+🔘 **X2Y2 NFT Marketplace**
 
-Layer 2 is a term used for solutions created to help scale an application by processing transactions off of the Ethereum Mainnet (layer 1) while still maintaining the 
-same security measures and decentralization as the mainnet. Layer 2 solutions increase throughput (transaction speed) and reduce gas fees.
-
-🔵 **Arbitrum**
-
-Arbitrum is the first-largest Ethereum layer 2 with a total of $2.68B locked into its smart contracts, as of this writing, according to [l2beat](https://l2beat.com/scaling/tvl).
-Arbitrum uses a technique known as transaction rollups to record batches of submitted transactions on the Ethereum main chain, and execute them on a cheap, scalable 
-layer 2 sidechain while leveraging Ethereum to ensure correct results. This process helps to offload most of the computational and storage burden Ethereum currently 
-suffers from, while enabling new classes of powerful layer 2-based DApps. [[1]](https://coinmarketcap.com/alexandria/article/what-is-arbitrum)
-
-🔴 **Optimism**
-
-Optimism is a layer 2 chain, meaning it functions on top of Ethereum mainnet (layer 1). Transactions take place on Optimism, but the data about transactions get posted
-to mainnet where they are validated. It’s like driving in a less crowded side street while benefiting from the security of a highway. Optimism is the second-largest 
-Ethereum layer 2 with a total of $1.61B locked into its smart contracts, as of this writing, according to [l2beat](https://l2beat.com/scaling/tvl). Optimism uses a technology called rollups, 
-specifically Optimistic rollups. They’re called rollups because they roll up (or bundle) the data about hundreds of transactions into a single transaction on Ethereum 
-mainnet (layer 1). And they’re called Optimistic rollups because transactions are assumed to be valid until they are proven false, or in other words, innocent until proven guilty. 
-
-🟢 **Arbitrum Versus Optimism**
-
-The largest difference between Arbitrum and Optimism is how the technology resolves a dispute on Layer 2. Both projects are optimistic rollups and use a challenge 
-system where any validator can dispute a block on the chain. This is where the technology of the 2 projects diverge. Optimism re-executes the disputed transaction on 
-Layer 1 and checks which party is correct in their assertion. 
-The Arbitrum team realized that this process can contribute to network congestion significantly. Optimism needs to port a large amount of data to Layer 1 to compute 
-the disputed transaction and resolve it. Instead, Arbitrum continuously subdivides the challenge until the disputed information is so small that it can be quickly sent
-to and resolved on Layer 1. Because they both use optimistic rollups, some trust in the validators is required. If all validators for a dApp collude in a malicious 
-attack and no one challenges it, Arbitrum’s bridge between Layer 1 and 2 will assume the transaction is valid.[[2]](https://www.benzinga.com/money/what-is-arbitrum)
+NFT marketplaces have emerged as a popular platform for NFT enthusiasts to buy and sell their digital assets. These marketplaces have made it easier for users to trade
+NFTs, which has led to the rise of several platforms in the market. One such platform that has gained popularity among users is X2Y2.
+X2Y2 is a decentralized NFT marketplace that aims to give back to the community by providing a platform where users can trade their digital assets without any 
+intermediaries. The platform is built by a team of highly experienced professionals who have expertise in blockchain solutions. The X2Y2 marketplace offers several 
+features that make it stand out from other platforms. It provides users with a secure and transparent environment for trading their NFTs, ensuring that all 
+transactions are recorded on the blockchain. Additionally, X2Y2 offers low transaction fees, making it an affordable option for users looking to buy or sell their 
+digital assets.
+In recent times, X2Y2 has witnessed an increase in user activity as more people are joining the platform to trade their NFTs. The marketplace's user-friendly interface
+and efficient trading system have contributed significantly to its growing popularity among NFT enthusiasts.
+In this dashboard, we will analyze the activity of users on the X2Y2 marketplace and provide insights into its performance. We will examine various metrics such as 
+user engagement, transaction volume, and trading patterns to gain a better understanding of how the platform operates and what makes it unique compared to other NFT 
+marketplaces.
 
 
 
