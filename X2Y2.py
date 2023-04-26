@@ -165,11 +165,11 @@ with c4:
 df = X2Y2_Statistical_Data
 c1, c2, c3, c4 = st.columns(4)
    
-with c2:
+with c1:
     st.metric(label='Total Transactions Fee (ETH)', value=df['tx_fee_vol'])  
 
 df = NFT_Collection
-with c3:  
+with c2:  
     st.metric(label='Total NFT Project Count', value=df['Total NFT Project Count']) 
     
 
