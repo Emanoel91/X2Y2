@@ -181,7 +181,6 @@ df = NFT_Sales
 c1, c2 = st.columns(2)
             
 with c1:
-     df = Daily_Transactions
      fig = px.line(df, x='DATE', y='VOLUME', title='X2Y2 Sales Volume', log_y=False)
      fig.update_layout(showlegend=True, xaxis_title=None, legend_title=False, yaxis_title='$ETH', xaxis={'categoryorder':'total ascending'})
      st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)	
