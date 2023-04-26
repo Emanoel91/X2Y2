@@ -167,10 +167,7 @@ c1, c2 = st.columns(2)
    
 with c1:
     st.metric(label='Total Transactions Fee (ETH)', value=df['tx_fee_vol'])  
-
-df = NFT_Collection
-with c2:  
-    st.metric(label='Total NFT Project Count', value=df['Total NFT Project Count']) 
+ 
     
 
 st.write(
