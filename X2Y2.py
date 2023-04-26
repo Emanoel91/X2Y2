@@ -162,8 +162,7 @@ with c3:
 with c4:
     st.metric(label='Total Unique NFT Sellers Count', value=df['SELLER']) 
 
-df = X2Y2_Statistical_Data
-c1, c2 = st.columns(2)
+c1, c2, c3, c4 = st.columns(4)
    
 with c1:
     st.metric(label='Total Transactions Fee (ETH)', value=df['tx_fee_vol'])  
