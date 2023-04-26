@@ -73,16 +73,16 @@ def get_data(query1):
         return pd.read_json('https://api.flipsidecrypto.com/api/v2/queries/818c65d2-deb0-466c-970a-90916f561639/data/latest')
      elif query1 == 'Average daily price of X2Y2 token':
         return pd.read_json('https://api.flipsidecrypto.com/api/v2/queries/9c29d9d0-16c4-46e8-af48-ead55bc8afec/data/latest')
-     elif query1 == 'Monthly Transactions':
-        return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/8fd56cb3-9123-407b-9c95-0f215202a1a2/data/latest')
-     elif query1 == 'New Addresses Weekly':
-        return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/ca20a9b0-a0c5-49c9-b3d3-5a16a11e6b45/data/latest')
-     elif query1 == 'New Addresses Monthly':
-        return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/37b83485-1817-4ca3-bf57-8157ff28addc/data/latest')
-     elif query1 == 'Transaction Overview':
-        return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/335e43c1-ebc8-4117-80be-b97f3d0945a7/data/latest')
-     elif query1 == 'Arbitrum TX Status':
-        return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/cfc29701-c6f0-4a71-b102-7f119313dda9/data/latest')
+     elif query1 == 'Top User A':
+        return pd.read_json('https://api.flipsidecrypto.com/api/v2/queries/7a6a3e34-168b-47a7-ad01-aef9bae0235c/data/latest')
+     elif query1 == 'Top User B':
+        return pd.read_json('https://api.flipsidecrypto.com/api/v2/queries/738d9ade-643a-41fb-a4b2-575ed3c466b1/data/latest')
+     elif query1 == 'Top User C':
+        return pd.read_json('https://api.flipsidecrypto.com/api/v2/queries/f3da6ed8-8035-4388-a001-ecb2d92eb543/data/latest')
+     elif query1 == 'Top User D':
+        return pd.read_json('https://api.flipsidecrypto.com/api/v2/queries/15779677-1ac8-47b3-bf15-4546a4c47a27/data/latest')
+     elif query1 == 'Top User E':
+        return pd.read_json('https://api.flipsidecrypto.com/api/v2/queries/0bb1c8a8-d1bd-4f85-bbfe-68c17b537b3f/data/latest')
      elif query1 == 'Optimism TX Status':
         return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/880cf7d7-70ab-4cff-b926-3b6df8a28c59/data/latest')
      elif query1 == 'Arbitrum TX Status Weekly':
@@ -114,11 +114,11 @@ X2Y2_Statistical_Data = get_data('X2Y2 Statistical Data')
 NFT_Collection = get_data('NFT Collection')
 NFT_Sales = get_data('NFT Sales')
 Average_daily_price_of_X2Y2_token = get_data('Average daily price of X2Y2 token')
-Monthly_Transactions = get_data('Monthly Transactions')
-New_Addresses_Weekly = get_data('New Addresses Weekly')
-New_Addresses_Monthly = get_data('New Addresses Monthly')
-Transaction_Overview = get_data('Transaction Overview')
-Arbitrum_TX_Status = get_data('Arbitrum TX Status')
+Top_User_A = get_data('Top User A')
+Top_User_B = get_data('Top User B')
+Top_User_C = get_data('Top User C')
+Top_User_D = get_data('Top User D')
+Top_User_F = get_data('Top User E')
 Optimism_TX_Status = get_data('Optimism TX Status')
 Arbitrum_TX_Status_Weekly = get_data('Arbitrum TX Status Weekly')
 Optimism_TX_Status_Weekly = get_data('Optimism TX Status Weekly')
@@ -215,21 +215,6 @@ with c2:
      fig.update_layout(showlegend=True, xaxis_title=None, legend_title=False, yaxis_title='$USD', xaxis={'categoryorder':'total ascending'})
      st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)	
 
-st.write(
-    """
-**99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999.**
-    """
-)
-
-df = Classification_of_Activity_of_Addresses_Arbitrum
-fig = px.scatter(df.sort_values(['Active Day Count', 'Address Count'], ascending=[True, True]), x='Active Day Count', y='Address Count', title='🔵Arbitrum: Classification of the Number of Days of Activity', log_x=False, log_y=True)
-fig.update_layout(legend_title=None, xaxis_title='Active Day Count', yaxis_title='Address Count')
-st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
-
-df = Classification_of_Activity_of_Addresses_Optimism
-fig = px.scatter(df.sort_values(['Active Day Count', 'Address Count'], ascending=[True, True]), x='Active Day Count', y='Address Count', title='🔴Optimism: Classification of the Number of Days of Activity', log_x=False, log_y=True)
-fig.update_layout(legend_title=None, xaxis_title='Active Day Count', yaxis_title='Address Count')
-st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
 st.write(
     """
@@ -237,18 +222,18 @@ st.write(
     """
 )
 
-df = Status_of_Total_Transactions
+
 c1, c2 = st.columns(2)
             
 with c1:
-    fig = px.bar(df, x='L2 Chain', y='Total TXs Count', color='Status', title='Status of Total Transactions', log_y=False, barmode='group')
-    fig.update_layout(showlegend=True, xaxis_title=None, legend_title='Status', yaxis_title='TXs Count', xaxis={'categoryorder':'total ascending'})
+    df = Top_User_A
+    fig = px.bar(df, x='PROJECT_NAME', y='VOLUME', color='VOLUME', title='Top 10 NFT Projects with the Largest Sales Volumes', log_y=False, barmode='group')
+    fig.update_layout(showlegend=True, xaxis_title=None, legend_title='Volume', yaxis_title='$ETH', xaxis={'categoryorder':'total ascending'})
     st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 		
-with c2:
-    fig = px.bar(df, x='L2 Chain', y='Total TX Fees', color='Status', title='Status of Total Transaction Fees', log_y=False, barmode='group')
-    fig.update_layout(showlegend=True, xaxis_title=None, legend_title='Status', yaxis_title='$ETH', xaxis={'categoryorder':'total ascending'})
-    st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+
+		
+
 
 st.write(
     """
