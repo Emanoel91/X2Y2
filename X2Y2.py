@@ -146,7 +146,7 @@ with c1:
 with c2:
     st.metric(label='Current NFT Sales Count', value=df['CURRENT_SALES_COUNT']) 	
 with c3:
-    st.metric(label='Current Purchasers Count', value=df['purchaser'])     
+    st.metric(label='Current Purchasers Count', value=df['PURCHASER'])     
 with c4:
     st.metric(label='Current Sellers Count', value=df['SELLER'])    
 
