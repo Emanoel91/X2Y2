@@ -185,7 +185,22 @@ with c1:
      fig.update_layout(showlegend=True, xaxis_title=None, legend_title=False, yaxis_title='$ETH', xaxis={'categoryorder':'total ascending'})
      st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)	
 		
+with c2:
+     fig = px.line(df, x='DATE', y='SALES_COUNT', title='X2Y2 Sales Count', log_y=False)
+     fig.update_layout(showlegend=True, xaxis_title=None, legend_title=False, yaxis_title='TXs Count', xaxis={'categoryorder':'total ascending'})
+     st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)	
 
+c1, c2 = st.columns(2)
+            
+with c1:
+     fig = px.line(df, x='DATE', y='SELLER', title='X2Y2 Sellers Count', log_y=False)
+     fig.update_layout(showlegend=True, xaxis_title=None, legend_title=False, yaxis_title='Address Count', xaxis={'categoryorder':'total ascending'})
+     st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)	
+		
+with c2:
+     fig = px.line(df, x='DATE', y='PURCHASER', title='X2Y2 Purchasers Count', log_y=False)
+     fig.update_layout(showlegend=True, xaxis_title=None, legend_title=False, yaxis_title='Address Count', xaxis={'categoryorder':'total ascending'})
+     st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)	
 
 st.write(
     """
