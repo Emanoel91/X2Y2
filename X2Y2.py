@@ -71,8 +71,8 @@ def get_data(query1):
         return pd.read_json('https://api.flipsidecrypto.com/api/v2/queries/85d9dabd-8742-4358-a87e-56371bb61a22/data/latest')
      elif query1 == 'NFT Sales':
         return pd.read_json('https://api.flipsidecrypto.com/api/v2/queries/818c65d2-deb0-466c-970a-90916f561639/data/latest')
-     elif query1 == 'Weekly Transactions':
-        return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/29ad802c-4267-4cc7-8458-b48f17d6898b/data/latest')
+     elif query1 == 'Average daily price of X2Y2 token':
+        return pd.read_json('https://api.flipsidecrypto.com/api/v2/queries/9c29d9d0-16c4-46e8-af48-ead55bc8afec/data/latest')
      elif query1 == 'Monthly Transactions':
         return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/8fd56cb3-9123-407b-9c95-0f215202a1a2/data/latest')
      elif query1 == 'New Addresses Weekly':
@@ -113,7 +113,7 @@ yesterday_data = get_data('yesterday data')
 X2Y2_Statistical_Data = get_data('X2Y2 Statistical Data')
 NFT_Collection = get_data('NFT Collection')
 NFT_Sales = get_data('NFT Sales')
-Weekly_Transactions = get_data('Weekly Transactions')
+Average_daily_price_of_X2Y2_token = get_data('Average daily price of X2Y2 token')
 Monthly_Transactions = get_data('Monthly Transactions')
 New_Addresses_Weekly = get_data('New Addresses Weekly')
 New_Addresses_Monthly = get_data('New Addresses Monthly')
@@ -200,6 +200,19 @@ with c1:
 with c2:
      fig = px.line(df, x='DATE', y='PURCHASER', title='X2Y2 Purchasers Count', log_y=False)
      fig.update_layout(showlegend=True, xaxis_title=None, legend_title=False, yaxis_title='Address Count', xaxis={'categoryorder':'total ascending'})
+     st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)	
+
+c1, c2 = st.columns(2)
+            
+with c1:
+     fig = px.line(df, x='DATE', y='TX_FEE_VOL', title='Daily Transaction Fees in X2Y2', log_y=False)
+     fig.update_layout(showlegend=True, xaxis_title=None, legend_title=False, yaxis_title='$ETH', xaxis={'categoryorder':'total ascending'})
+     st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)	
+		
+with c2:
+     df = Average_daily_price_of_X2Y2_token
+     fig = px.line(df, x='DATE', y='AVERAGE_PRICE', title='Average Daily Price of X2Y2 Token', log_y=False)
+     fig.update_layout(showlegend=True, xaxis_title=None, legend_title=False, yaxis_title='$USD', xaxis={'categoryorder':'total ascending'})
      st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)	
 
 st.write(
