@@ -69,8 +69,8 @@ def get_data(query1):
         return pd.read_json('https://api.flipsidecrypto.com/api/v2/queries/01088e5b-3de7-4b40-8130-05ac7676db93/data/latest')
      elif query1 == 'NFT Collection':
         return pd.read_json('https://api.flipsidecrypto.com/api/v2/queries/85d9dabd-8742-4358-a87e-56371bb61a22/data/latest')
-     elif query1 == 'Daily Transactions Value':
-        return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/ea6888d0-422a-4bce-bb77-da7ec1410cbc/data/latest')
+     elif query1 == 'NFT Sales':
+        return pd.read_json('https://api.flipsidecrypto.com/api/v2/queries/818c65d2-deb0-466c-970a-90916f561639/data/latest')
      elif query1 == 'Weekly Transactions':
         return pd.read_json('https://node-api.flipsidecrypto.com/api/v2/queries/29ad802c-4267-4cc7-8458-b48f17d6898b/data/latest')
      elif query1 == 'Monthly Transactions':
@@ -112,7 +112,7 @@ def get_data(query1):
 yesterday_data = get_data('yesterday data')
 X2Y2_Statistical_Data = get_data('X2Y2 Statistical Data')
 NFT_Collection = get_data('NFT Collection')
-Daily_Transactions_Value = get_data('Daily Transactions Value')
+NFT_Sales = get_data('NFT Sales')
 Weekly_Transactions = get_data('Weekly Transactions')
 Monthly_Transactions = get_data('Monthly Transactions')
 New_Addresses_Weekly = get_data('New Addresses Weekly')
@@ -177,19 +177,16 @@ st.write(
 **9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999.**
     """
 )
-df = Top_20_Events_Based_on_TXs_Count_Arbitrum
+df = NFT_Sales
 c1, c2 = st.columns(2)
             
 with c1:
-    fig = px.bar(df, x='Event', y='TX Count', color='Event', title='🔵Arbitrum: Top 20 Events Based TXs Count', log_y=False)
-    fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_title='TXs Count', xaxis={'categoryorder':'total ascending'})
-    st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+     df = Daily_Transactions
+     fig = px.line(df, x='DATE', y='VOLUME', title='X2Y2 Sales Volume', log_y=False)
+     fig.update_layout(showlegend=True, xaxis_title=None, legend_title=False, yaxis_title='$ETH', xaxis={'categoryorder':'total ascending'})
+     st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)	
 		
-df = Top_20_Events_Based_on_TXs_Count_Optimism
-with c2:
-    fig = px.bar(df, x='Event', y='TX Count', color='Event', title='🔴Optimism: Top 20 Events Based TXs Count', log_y=False)
-    fig.update_layout(showlegend=False, xaxis_title=None, legend_title='', yaxis_title='TXs Count', xaxis={'categoryorder':'total ascending'})
-    st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)	
+
 
 st.write(
     """
