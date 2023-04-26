@@ -165,7 +165,7 @@ with c4:
 c1, c2, c3, c4 = st.columns(4)
    
 with c1:
-    st.metric(label='Total Transactions Fee (ETH)', value=df['tx_fee_vol'])  
+    st.metric(label='Total Transactions Fee Collected (ETH)', value=df['TX_FEE_VOL'])  
  
     
 
